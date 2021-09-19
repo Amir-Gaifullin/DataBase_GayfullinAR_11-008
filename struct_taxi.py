@@ -29,7 +29,8 @@ class Rate:
 
 
 class Order:
-    def __init__(self, price, route, id_c, id_d):
+    def __init__(self, date, price, route, id_c, id_d):
+        self.date = date
         self.price = price
         self.route = route
         self.id_c = id_c
