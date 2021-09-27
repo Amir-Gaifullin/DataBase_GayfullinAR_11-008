@@ -1,5 +1,7 @@
 CREATE DATABASE yandex_taxi_hw2;
 
+\c hw2;
+
 create table client (
 	id serial,
 	name varchar,
