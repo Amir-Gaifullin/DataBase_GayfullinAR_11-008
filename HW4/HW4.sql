@@ -1,7 +1,6 @@
 CREATE DATABASE hotel_hw4;
 \c hotel_hw4;
 
-
 CREATE TABLE hotel (
 	hotel_id INT PRIMARY KEY ,
 	title VARCHAR(255) NOT NULL,
@@ -31,7 +30,7 @@ CREATE TABLE room (
 	category VARCHAR(255),
 	foreign_hotel_id INT,
 	FOREIGN KEY (foreign_hotel_id) REFERENCES hotel(hotel_id),
-	CONSTRAINT fk_hotel_hotel_id UNIQUE(foreign_hotel_id)
+	CONSTRAINT fk_hotel_room_hotel_id UNIQUE(foreign_hotel_id)
 );
 
 
@@ -54,7 +53,7 @@ CREATE TABLE guest(
 
 CREATE TABLE living (
 	living_id INT NOT NULL,
-	period DATETIME,
+	period INTERVAL,
 	pay INT,
 	foreign_guest_id INT,
 	FOREIGN KEY (foreign_guest_id) REFERENCES guest(guest_id),
